@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Total Order Multicast Simulator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Total Order Multicast Simulator</h1>
+        <p>Distributed Computing Mini Project</p>
+    </header>
+
+
+    <main>
+
+        <!-- Control Section -->
+        <section class="control-panel">
+
+            <h2>Send Multicast Message</h2>
+
+            <div class="controls">
+
+                <div>
+                    <label>Sender Process</label>
+
+                    <select id="sender">
+                        <option value="P1">Process P1</option>
+                        <option value="P2">Process P2</option>
+                        <option value="P3">Process P3</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label>Message</label>
+
+                    <input
+                        type="text"
+                        id="message"
+                        placeholder="Enter message"
+                    >
+                </div>
+
+
+                <button onclick="multicastMessage()">
+                    Multicast Message
+                </button>
+
+                <button class="reset-btn" onclick="resetSimulation()">
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Process Section -->
+        <section>
+
+            <h2>Distributed Processes</h2>
+
+            <div class="process-container">
+
+                <div class="process" id="P1">
+                    <h3>Process P1</h3>
+
+                    <div class="status">
+                        Online
+                    </div>
+
+                    <h4>Delivered Messages</h4>
+
+                    <div class="messages" id="messages-P1">
+                        <p class="empty">No messages yet</p>
+                    </div>
+                </div>
+
+
+                <div class="process" id="P2">
+                    <h3>Process P2</h3>
+
+                    <div class="status">
+                        Online
+                    </div>
+
+                    <h4>Delivered Messages</h4>
+
+                    <div class="messages" id="messages-P2">
+                        <p class="empty">No messages yet</p>
+                    </div>
+                </div>
+
+
+                <div class="process" id="P3">
+                    <h3>Process P3</h3>
+
+                    <div class="status">
+                        Online
+                    </div>
+
+                    <h4>Delivered Messages</h4>
+
+                    <div class="messages" id="messages-P3">
+                        <p class="empty">No messages yet</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Total Order Section -->
+        <section class="order-section">
+
+            <h2>Total Order</h2>
+
+            <p>
+                All processes must deliver messages in the same order.
+            </p>
+
+            <div id="total-order">
+                <p class="empty">No messages multicast yet</p>
+            </div>
+
+        </section>
+
+
+        <!-- Event Log -->
+        <section class="log-section">
+
+            <h2>Event Log</h2>
+
+            <div id="event-log">
+                <p class="empty">Simulation events will appear here.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Total Order Multicast Simulator |
+            Distributed Computing
+        </p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
